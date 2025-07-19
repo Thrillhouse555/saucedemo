@@ -1,0 +1,18 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "main": "blank.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "npx cypress open",
+    "cy:server:open": "npx cypress open --cypress-file=cypress.server.config.js",
+    "cy:smoketest": "npx cypress run --spec=cypress/e2e/test_suites/smoke_test.cy.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.5.2"
+  }
+}
