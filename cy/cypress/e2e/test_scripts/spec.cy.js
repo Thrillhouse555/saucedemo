@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('basic tests', () => {
 
   beforeEach(() => {
     cy.clearAllCookies();
