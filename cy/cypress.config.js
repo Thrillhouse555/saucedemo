@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const checkGmail = require('./gmail/check-gmail');
 
 module.exports = defineConfig({
   e2e: {
@@ -9,6 +10,15 @@ module.exports = defineConfig({
     testIsolation: false,
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      on ('task', {
+        logToTerminal(message) {
+          console.log(message);
+          return null;
+        },
+        checkGmail(args) {
+          return checkGmail(args); // expects {query , maxResults }
+        }
+      })
     },
     specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
   },

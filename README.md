@@ -1,7 +1,3 @@
-# e2e
+# Saucedemo
 
-
-# Run Jenkins
-
-terminal: java -jar jenkins.war
-http://localhost:8080/
+Example tests using saucedemo
