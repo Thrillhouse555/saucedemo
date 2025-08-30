@@ -1,10 +1,15 @@
 class CartPage {
+
+    itemName = '[data-test="inventory-item-name"]'
+    checkoutButton = '[data-test="checkout"]'
+
     verifyItemInCart(itemName) {
-      cy.get('[data-test="inventory-item-name"]').should('contain', itemName);
+      cy.get(this.itemName).should('contain', itemName);
     }
   
     checkout() {
-      cy.get('[data-test="checkout"]').click();
+      cy.get(this.checkoutButton).click();
+      cy.task('logToTerminal', `User goes to checkout`);
     }
   }
   

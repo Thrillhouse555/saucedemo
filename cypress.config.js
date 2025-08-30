@@ -8,10 +8,10 @@ module.exports = defineConfig({
     watchForFileChanges: false,
     //testIsolation: false,
     setupNodeEvents(on, config) {
-      // implement node event listeners here
       on ('task', {
         logToTerminal(message) {
-          console.log(message);
+          const timestamp = new Date().toISOString();
+          console.log(`[${timestamp}] ${message}`);
           return null;
         }
       })

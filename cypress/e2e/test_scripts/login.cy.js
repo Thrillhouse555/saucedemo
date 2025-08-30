@@ -11,6 +11,7 @@ describe('Login Tests', () => {
       const user = users.standardUser;
       LoginPage.login(user.username, user.password);
     });
+    LoginPage.assertLoginSuccess();
   });
 
   it('Login with incorrect password', () => {

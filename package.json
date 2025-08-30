@@ -4,7 +4,8 @@
   "main": "blank.js",
   "scripts": {
     "cy:open": "npx cypress open",
-    "cy:smoketest": "npx cypress run --spec=cypress/e2e/test_suites/smoke_test.cy.js"
+    "cy:smoke": "npx cypress run --spec=cypress/e2e/test_suites/smoke_test.cy.js",
+    "cy:full": "npx cypress run --spec=cypress/e2e/test_suites/full.cy.js"
   },
   "keywords": [],
   "author": "",

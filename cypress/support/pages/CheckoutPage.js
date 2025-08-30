@@ -1,14 +1,24 @@
 class CheckoutPage {
+
+    firstNameField = '[data-test="firstName"]'
+    lastNameField = '[data-test="lastName"]'
+    postcodeField = '[data-test="postalCode"]'
+    continueButton = '[data-test="continue"]'
+    finishButton = '[data-test="finish"]'
+    completeCheckoutTitle = '[data-test="title"]'
+
     fillCheckoutInfo(first, last, postcode) {
-      cy.get('[data-test="firstName"]').type(first);
-      cy.get('[data-test="lastName"]').type(last);
-      cy.get('[data-test="postalCode"]').type(postcode);
-      cy.get('[data-test="continue"]').click();
+      cy.get(this.firstNameField).type(first);
+      cy.get(this.lastNameField).type(last);
+      cy.get(this.postcodeField).type(postcode);
+      cy.get(this.continueButton).click();
+      cy.task('logToTerminal', `User fills checkout info`);
     }
   
     finishCheckout() {
-      cy.get('[data-test="finish"]').click();
-      cy.get('[data-test="title"]').should('contain', 'Checkout: Complete!');
+      cy.get(this.finishButton).click();
+      cy.get(this.completeCheckoutTitle).should('contain', 'Checkout: Complete!');
+      cy.task('logToTerminal', `User completes checkout`);
     }
   }
   
